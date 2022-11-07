@@ -177,3 +177,6 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+
+def make_payment_external(request):
+    return render(request, 'checkout/make_payment_external.html')
