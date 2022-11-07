@@ -1,0 +1,53 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %} 
+
+
+{% block content %}
+        <div class="container h-100 pb-5">
+            <div class="row h-100 pb-5">
+                <div class="col-12 ">
+                    <h1 class=" text-dark font-weight-bold pt-5 text-center">
+                        Blog
+                    </h1>      
+                    <!-- Blog Entries Column -->
+                        <div class="col-md-8 mt-3 left">
+                            {% for post in post_list %}
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h2 class="card-title">{{ post.title }}</h2>
+                                    <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+                                    <p class="card-text">{{post.content|slice:":200" }}</p>
+                                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-dark">Read More &rarr;</a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <!-- https://djangocentral.com/adding-pagination-with-django/ -->
+                        {% if post_list.has_other_pages %}
+                            <nav aria-label="Page navigation conatiner">
+                                <ul class="pagination justify-content-center">
+                                    {% if post_list.has_previous %}
+                                    <li><a href="?page={{ post_list.previous_page_number }}" class="page-link text-dark border border-dark rounded">&laquo; PREV </a></li>
+                                    {% endif %}
+                                    {% if post_list.has_next %}
+                                    <li><a href="?page={{ post_list.next_page_number }}" class="page-link text-dark border border-dark rounded"> NEXT &raquo;</a></li>
+                                    {% endif %}
+                                </ul>
+                            </nav>                            
+                        {% endif %}
+
+                </div>              
+            </div>
+            <div class="w-100 p-5 m-5"></div>
+        </div>  
+                        
+{% endblock %}
+

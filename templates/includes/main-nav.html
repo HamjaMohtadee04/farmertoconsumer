@@ -1,0 +1,59 @@
+<div class="collapse navbar-collapse bg-dark" id="main-nav">
+    <ul class="navbar-nav w-auto mx-auto">
+        <li class="nav-item d-block d-md-none">
+            <a class="logo-font font-weight-bold nav-link text-warning mr-4" href="{% url 'home' %}" id="home-link">
+                Home
+            </a>
+        </li>
+        
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-white mr-4" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                All Products
+            </a>
+            <div class="dropdown-menu border-top-0 border-warning bg-dark rounded-0" aria-labelledby="all-products-link">
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item font-weight-bold text-white">By Price</a>
+                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item font-weight-bold text-white">By Rating</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item font-weight-bold text-white">By Category</a>
+                <a href="{% url 'products' %}" class="dropdown-item font-weight-bold text-white">All Products</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-white mr-4" href="#" id="butcher-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Butchers
+            </a>
+            <div class="dropdown-menu border-top-0 border-warning bg-dark rounded-0" aria-labelledby="butcher-link">
+                <a href="{% url 'products' %}?category=beef" class="dropdown-item font-weight-bold text-white">Beef</a>
+                <a href="{% url 'products' %}?category=pork" class="dropdown-item font-weight-bold text-white">Pork</a>
+                <a href="{% url 'products' %}?category=chicken" class="dropdown-item font-weight-bold text-white">Chicken</a>
+                <a href="{% url 'products' %}?category=lamb" class="dropdown-item font-weight-bold text-white">Lamb</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-white mr-4" href="#" id="groceries-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Groceries
+            </a>
+            <div class="dropdown-menu border-top-0 border-warning bg-dark rounded-0" aria-labelledby="groceries-link">
+                <a href="{% url 'products' %}?category=bread" class="dropdown-item font-weight-bold text-white">Bread</a>                
+                <a href="{% url 'products' %}?category=dairy" class="dropdown-item font-weight-bold text-white">Dairy</a>
+                <a href="{% url 'products' %}?category=veg" class="dropdown-item font-weight-bold text-white">Fruit & Veg</a>              
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-warning mr-4" href="#" id="about-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                About Us
+            </a>   
+            <div class="dropdown-menu border-top-0 border-warning bg-dark rounded-0" aria-labelledby="about-link">
+                <a href="{% url 'about' %}" class="dropdown-item font-weight-bold text-white">Our Story</a>
+                <a href="{% url 'contact' %}" class="dropdown-item font-weight-bold text-white">Contact Us</a>
+                <a href="{% url 'blog' %}" class="dropdown-item font-weight-bold text-white">Blog</a>
+                
+            </div>         
+        </li>
+        
+        
+
+        
+    </ul>
+</div>
